@@ -109,6 +109,22 @@ module.exports = {
         `${process.env.CHIADO_DEPLOYER_PRIV_KE2Y}`,
       ],
     },
+    Taiko: {
+      url: "https://rpc.test.taiko.xyz",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.TAIKO_DEPLOYER_PRIV_KEY}`,
+        `${process.env.TAIKO_DEPLOYER_PRIV_KEY2}`,
+      ],
+    },
+    Sepolia: {
+      url: "https://rpc.sepolia.org",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.SEPOLIA_DEPLOYER_PRIV_KEY}`,
+        `${process.env.SEPOLIA_DEPLOYER_PRIV_KEY2}`,
+      ],
+    },
 
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", // <---- YOUR INFURA ID! (or it won't work)
