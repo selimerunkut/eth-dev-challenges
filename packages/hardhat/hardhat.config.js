@@ -93,11 +93,38 @@ module.exports = {
     //   url: `https://goerli.infura.io/v3/${process.env.GOERLI_INFURA_KEY}`,
     //   accounts: [`${process.env.GOERLI_DEPLOYER_PRIV_KEY}`],
     // },
-    // xdai: {
-    //   url: 'https://dai.poa.network',
-    //   gasPrice: 1000000000,
-    //   accounts: [`${process.env.XDAI_DEPLOYER_PRIV_KEY}`],
-    // },
+    Gnosis: {
+      url: "https://rpc.ap-southeast-1.gateway.fm/v4/gnosis/non-archival/mainnet",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.GNOSIS_DEPLOYER_PRIV_KEY}`,
+        `${process.env.GNOSIS_DEPLOYER_PRIV_KEY2}`,
+      ],
+    },
+    chiado: {
+      url: "https://rpc.eu-central-2.gateway.fm/v4/gnosis/archival/chiado",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.CHIADO_DEPLOYER_PRIV_KEY}`,
+        `${process.env.CHIADO_DEPLOYER_PRIV_KE2Y}`,
+      ],
+    },
+    Taiko: {
+      url: "https://rpc.test.taiko.xyz",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.TAIKO_DEPLOYER_PRIV_KEY}`,
+        `${process.env.TAIKO_DEPLOYER_PRIV_KEY2}`,
+      ],
+    },
+    Sepolia: {
+      url: "https://rpc.sepolia.org",
+      gasPrice: 1000000000,
+      accounts: [
+        `${process.env.SEPOLIA_DEPLOYER_PRIV_KEY}`,
+        `${process.env.SEPOLIA_DEPLOYER_PRIV_KEY2}`,
+      ],
+    },
 
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", // <---- YOUR INFURA ID! (or it won't work)
@@ -141,13 +168,6 @@ module.exports = {
 
       //      url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXXXX/eth/goerli", // <---- YOUR MORALIS ID! (not limited to infura)
 
-      accounts: {
-        mnemonic: mnemonic(),
-      },
-    },
-    xdai: {
-      url: "https://rpc.xdaichain.com/",
-      gasPrice: 1000000000,
       accounts: {
         mnemonic: mnemonic(),
       },
@@ -298,7 +318,7 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: "0.4.16",
+        version: "0.8.4",
         settings: {
           optimizer: {
             enabled: true,
@@ -318,11 +338,14 @@ module.exports = {
     ],
   },
   ovm: {
-    solcVersion: "0.7.6",
+    solcVersion: "0.8.2",
   },
   namedAccounts: {
     deployer: {
       default: 0, // here this will by default take the first account as deployer
+    },
+    artStewardAddress: {
+      default: 1,
     },
   },
   etherscan: {
