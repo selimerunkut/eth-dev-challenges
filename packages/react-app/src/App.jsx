@@ -296,7 +296,7 @@ function App(props) {
           */}
 
           <Contract
-            name="BecToken"
+            name="ReceiverPays"
             price={price}
             signer={userSigner}
             provider={localProvider}
